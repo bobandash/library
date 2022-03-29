@@ -1,65 +1,38 @@
 html, body {
-    background-color: linear-gradient(burlywood 0%, burlywood 10%, white 10%, white 90%, burlywood 90%, burlywood 100%);
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to right, rgb(105, 21, 21), white);
+}
+
+#header-container, #add-button-footer {
+    height: 15vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-text {
+    font-size: 2.5em;
+    font-family: 'Sans Serif', 'Times New Roman';
 }
 
 
-
-#add-button, .new-book {
-    display: inline-block;
-    width: 12.5%;
-    height: 300px;
-    border: solid black;
-    background-color: white;
-    font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    vertical-align: top;
-    margin-top: 10px;
-    margin-right: 20px;
-    position: relative;
+#books-container {
+    height: 70vh;
+    display: flex;
 }
 
-.new-book{
-    inline-size: 12.5%;
-    overflow-wrap:break-word;
-    white-space: pre;
+#add-button {
+    height: 70%;
+    width: 8em;
+    background: gray;
+    font-size: 2.5em;
+    border-radius: 20px;
 }
 
-.remove-button {
-    background-color: red;
-    height: 50px;
-    width: 50px;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.toggle-button {
-    background-color: gray;
-    height: 50px;
-    width: 50px;
-    font-weight: bold;
-    font-size: 15px;
-    margin-right: 20px;
-}
-
-#main-container{
-    margin-left: 10%;
-    margin-right: 10%;
-    background: linear-gradient(to right, burlywood 7.5%, white 7.5%, white 92.5%, burlywood 92.5%);
-    background: linear-gradient(to right, burlywood 7.5%, white 7.5% 92.5%, burlywood 92.5%);
-}
-
-button:hover{
-    opacity: 80%;
-}
-
-#plus-icon{
-    width: 100%;
-}
-
-.button-container {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    height: 20%;
+#add-button:hover {
+    background: rgb(185, 185, 185);
 }
