@@ -1,6 +1,19 @@
 let myLibrary = [];
 let newBookButton = document.querySelector('#add-button');
-let container = document.querySelector('#main-container');
+let container = document.querySelector('#books-container');
+
+
+{/*        <header id = "header-container">
+            <h1 id = "header-text">The Forbidden Library</h1>
+        </header>
+        <div id = "books-container"></div>
+        <footer id = "add-button-footer">
+            <button id = "add-button">Insert a Book</button>
+        </footer>
+    </body>
+
+</html> */}
+
 
 //book constructor
 function Book (title, author, pages, read){

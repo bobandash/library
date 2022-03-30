@@ -6,12 +6,62 @@
     </head>
     <body>
         <header id = "header-container">
-            <h1 id = "header-text">The Forbidden Library</h1>
+            <div id = "header-text-container">
+                <h1 id = "header-text">The Forbidden Library</h1>
+            </div>
         </header>
-        <div id = "books-container"></div>
-        <footer id = "add-button-footer">
+        <div id = "books-container">
+            <div class = "book-div">
+                The Lightning Thief <br>
+                By Rick Riordan <br>
+                452 Pages <br>
+                Completed <br>
+                Review: 5/5. I really love the Percy Jackson series.
+            </div>
+            <div class = "book-div"></div>
+            <div class = "book-div"></div>
+            <div class = "book-div"></div>
+            <div class = "book-div"></div>
+            <div class = "book-div"></div>
+            <div class = "book-div"></div>
+            <div class = "book-div"></div>
+        </div>
+        <footer id = "footer-buttons">
+            <button id = "prev-button">&lt;</button>
             <button id = "add-button">Insert a Book</button>
+            <button id = "next-button">&gt;</button>
         </footer>
     </body>
 
 </html>
+
+<!-- var currentBook = myLibrary[i];
+var newDiv = document.createElement('div');
+newDiv.className = "new-book";
+
+//add the card with the book
+newDiv.textContent = `${currentBook.title} \r\n`
+newDiv.textContent += `By: ${currentBook.author} \r\n`
+newDiv.textContent += `Pages: ${currentBook.pages} \r\n`        
+if(currentBook.read ? newDiv.textContent += `Read: Yes \r\n` : newDiv.textContent += `Read: No \r\n`)
+
+//add a container div for the buttons
+var containerButtonsDiv = document.createElement('div');
+containerButtonsDiv.className = 'button-container';
+containerButtonsDiv.id = i;
+
+//add the remove button
+var removeButton = document.createElement('button');
+removeButton.className = 'remove-button'; 
+removeButton.id = i;
+removeButton.textContent = 'X';
+
+//add the toggle button
+var toggleButton = document.createElement('button');
+toggleButton.className = 'toggle-button';
+toggleButton.textContent = 'Read';
+
+container.appendChild(newDiv);
+newDiv.appendChild(containerButtonsDiv);
+containerButtonsDiv.appendChild(toggleButton);
+containerButtonsDiv.appendChild(removeButton); -->
