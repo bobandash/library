@@ -10,13 +10,22 @@
                 <h1 id = "header-text">The Forbidden Library</h1>
             </div>
         </header>
+        <div id = "add-button-container">
+            <button id = "add-button">Add A Book</button>
+        </div>
         <div id = "books-container">
             <div class = "book-div">
-                The Lightning Thief <br>
-                By Rick Riordan <br>
-                452 Pages <br>
-                Completed <br>
-                Review: 5/5. I really love the Percy Jackson series.
+                <p><em>The Lightning Thief</em><br>
+                By Rick Riordan<br>
+                252 pages<br>
+                Completed<br>
+                Review: 5/5
+                </p>
+                <div class = "buttons">
+                    <button>Toggle Read</button>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
             </div>
             <div class = "book-div"></div>
             <div class = "book-div"></div>
@@ -26,11 +35,26 @@
             <div class = "book-div"></div>
             <div class = "book-div"></div>
         </div>
-        <footer id = "footer-buttons">
-            <button id = "prev-button">&lt;</button>
-            <button id = "add-button">Insert a Book</button>
-            <button id = "next-button">&gt;</button>
-        </footer>
+        <form class = "pop-up hidden-popup">
+            <h1 id = "form-header">
+                Add A Book
+                <button id = "close-pop-up-button">X</button>
+            </h1>
+            <label for = "book-name"><input type = "text" id = "book-name" name="book-name" placeholder="Book Name"></label><br>
+            <label for = "book-author"><input type = "text" id = "book-author" name = "book-author" placeholder = "Author"></label><br>
+            <label for = "book-pages"><input type = "text" id = "book-pages" name = "book-pages" placeholder = "Pages"></label><br>
+            <!--Notice that the "for" for the label is the id-->
+            <label for = "book-read">Book Read:</label>
+            <input type = "radio" id = "yes-read" name = "book-read" value = "Yes">
+            <label for ="yes-read">Yes</label>
+            <input type = "radio" id = "no-read" name = "book-read" value = "No">
+            <label for ="no-read">No</label>
+            <br>
+            <!--If yes, then add the review-->
+            <label for ="review">Review:<br></label>
+            <textarea name = "review" rows = "4"></textarea>
+        </form>
+
     </body>
 
 </html>
