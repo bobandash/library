@@ -1,133 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-
 html, body {
-    height: 100%;
     margin: 0;
+    padding: 0;
 }
 
-html {
-    background-color: rgb(0, 0, 0);
-}
-
-body{
-    margin: 0 15vw;
-    background: url("images/library-background.jpg");
-    background-size: cover;
-}
-
-#header-container, #add-button-container, #header-text-container {
-    height: 15vh;
+header {
+    grid-area: header;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-#header-text-container {
-    height: 90%;
-    width: 55%;
-    background: url("images/wood-sign-no-background.png");
-    background-size: cover; 
+#add-book-btn-container {
+    grid-area: addBookbtn;
 }
 
-#header-text {
-    font-size: 3.5em;
-    font-family: 'Kaushan Script', cursive;
+.all-books-container {
+    grid-area: booksContainer;
+}
+
+.books-container {
+    height: 250px;
+    width: 340px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 85% 15%;
+    grid-template-areas: 
+        "textCategory textContent"
+        "btnsContainer btnsContainer";
 }
 
 
-#books-container {
-    height: 70vh;
-    display: flex;
-    flex-wrap: wrap;
+.text-category {
+    grid-area: textCategory;
 }
 
-#add-button:hover {
-    background: rgb(0, 0, 0);
+.text-content {
+    grid-area: textContent;
 }
 
+.text-content, .text-category {
+    font-size: 1.25em;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
 
-.book-div {
-    background: url("images/parchment.jpg");
-    border: 1px solid white;
-    background-size: cover;
-    height: 28vh;
-    width: 19%;
-    margin: 2.5%;
-    font-size: 1.5em;
+/*need to deal with the overflow*/
+.text-content {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.buttons-content {
+    grid-area: btnsContainer;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    line-height: 1.2em;
-}
-
-/* for add button */
-
-#add-button-container {
     justify-content: space-around;
 }
 
 
-#add-button {
-    height: 50%;
-    width: 8em;
-    background: rgb(216, 216, 216);
-    font-size: 2.5em;
-    border-radius: 20px;
-}
-
-#add-button:hover {
-    background: rgb(201, 200, 200);
-}
-
-
-#prompt-pop-up {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pop-up {
-    background-color: white;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 65%;
-    height: 60%;
-    opacity: 100%;
-}
-
-/* for form */
-#form-header {
+#add-book-btn-container {
     text-align: center;
-    background-color: lightgray;
-    margin: 0;
-    padding: 15px;
 }
 
-#close-pop-up-button {
-    margin-left: auto;
+#add-book-btn {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 30px;
+    width: 300px;
+    height: 50px;
+    background-color: white;
+    font-size: 1.25rem;
 }
 
-/* 
-<form class = "pop-up hidden-popup">
-<h1 id = "form-header">
-    Add A Book
-    <button id = "close-pop-up-button">X</button>
-</h1>
-<label for = "book-name"><input type = "text" id = "book-name" name="book-name" placeholder="Book Name"></label><br>
-<label for = "book-author"><input type = "text" id = "book-author" name = "book-author" placeholder = "Author"></label><br>
-<label for = "book-pages"><input type = "text" id = "book-pages" name = "book-pages" placeholder = "Pages"></label><br>
-<!--Notice that the "for" for the label is the id-->
-<label for = "book-read">Book Read:</label>
-<input type = "radio" id = "yes-read" name = "book-read" value = "Yes">
-<label for ="yes-read">Yes</label>
-<input type = "radio" id = "no-read" name = "book-read" value = "No">
-<label for ="no-read">No</label>
-<br>
-<!--If yes, then add the review-->
-<label for ="review">Review:<br></label>
-<textarea name = "review" rows = "4"></textarea>
-</form> */
+#add-book-btn:hover {
+    background-color: rgb(236, 230, 230);
+}
+
+#all-books-location {
+    display: grid;
+    grid-template-columns: 1fr minmax(600px, 1500px) 1fr;
+    grid-template-areas: 
+        "black1 booksContainer black2";
+}
+
+#all-books-container {
+    grid-area: booksContainer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.books-container {
+    margin: 1.25em;
+}
