@@ -1,33 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
 html, body {
     margin: 0;
     padding: 0;
 }
 
+* {
+    font-family: 'Carter One', cursive;
+}
+
+/*for header*/
 header {
     grid-area: header;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgba(211, 211, 211, 0.288);
     box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    height: 150px;
+}
+
+#header-text {
+    font-size: 2.75rem;
+    margin-top: .25em;
+    margin-bottom: 0px;
 }
 
 #add-book-btn-container {
-    grid-area: addBookbtn;
+    text-align: center;
 }
+
+#add-book-btn {
+    margin-bottom: 0.75em;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    font-size: 1.25rem;
+}
+
+#add-book-btn:hover {
+    background-color: rgb(236, 230, 230);
+}
+
+
+/*end for header*/
+
 
 .all-books-container {
     grid-area: booksContainer;
 }
 
 .books-container {
-    height: 250px;
+    height: 270px;
     width: 340px;
     border: 1px solid black;
     border-radius: 10px;
     display: grid;
     grid-template-columns: 35% 65%;
-    grid-template-rows: 85% 15%;
+    grid-template-rows: 77.5% 22.5%;
     grid-template-areas: 
         "textCategory textContent"
         "btnsContainer btnsContainer";
@@ -36,51 +69,59 @@ header {
 
 .text-category {
     grid-area: textCategory;
+    padding-left: 1.5rem;
+    text-transform: uppercase;
+}
+
+.text-category div, .text-content div{
+    margin-top: 0.1rem;
+    font-family: 'Neucha', cursive;
+    font-size: 1.25rem;;
 }
 
 .text-content {
     grid-area: textContent;
 }
 
+
 .text-content, .text-category {
     font-size: 1.25em;
-    margin-left: 1rem;
-    margin-top: 1rem;
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    background-color: rgba(211, 211, 211, 0.288);
 }
 
 /*need to deal with the overflow*/
 .text-content {
-    margin-top: 1rem;
-    margin-right: 1rem;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .buttons-content {
     grid-area: btnsContainer;
+    background-color: rgba(255, 192, 203, 0.205);
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-
-#add-book-btn-container {
-    text-align: center;
+.buttons-content button {
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: rgb(245, 245, 245);
 }
 
-#add-book-btn {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    border-radius: 30px;
-    width: 300px;
-    height: 50px;
-    background-color: white;
-    font-size: 1.25rem;
+.buttons-content button:hover {
+    background-color: rgb(223, 221, 221);
 }
 
-#add-book-btn:hover {
-    background-color: rgb(236, 230, 230);
+.fa-solid {
+    font-size: 1.5em;
 }
+
+
 
 #all-books-location {
     display: grid;
@@ -99,24 +140,12 @@ header {
 .books-container {
     margin: 1.25em;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    /*need to check this out later*/
+    max-width: fit-content;
+    max-height: max-content;
 }
 
-
-/*for the form */
-/* .star-rating {
-   margin: 25px 0 0px;
-   font-size: 0;
-   white-space: nowrap;
-   display: inline-block;
-   width: 175px;
-   height: 35px;
-   overflow: hidden;
-   position: relative;
-   background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
-   background-size: contain;
-} */
-
-
+/*for the popup form*/
 #modal-container {
     background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
@@ -170,39 +199,4 @@ header {
     height: 1.2em;
     font-size: 1.2em;
 }
-
-/* 
-<div id = "modal-container">
-<form id = "add-book-form" method = "post">
-    <div id = "form-header">
-        <h1>Add a Book</h1>
-        <button id = "close-button">X</button>
-    </div>
-    <label for = "book-name">Book Name:</label>
-    <input type = "text" id = "book-name" name = "book-name" required>
-    <label for = "author-name">Author Name:</label>
-    <input type = "text" id = "author-name" name = "author-name" required>
-    <label for = "num-pages">Pages:</label>
-    <input type = "number" id = "num-pages" name = "num-pages" required>
-    <label for = "book-read">Book Read:</label>
-    <select id = "book-read">
-        <option value = "yes-read">Yes</option>
-        <option value = "no-read">No</option>
-    </select>
-    <label>Review:</label>
-    <span class = "star-rating">
-        <input type="radio" name="rating1" value="1"><i></i>
-        <input type="radio" name="rating1" value="2"><i></i>
-        <input type="radio" name="rating1" value="3"><i></i>
-        <input type="radio" name="rating1" value="4"><i></i>
-        <input type="radio" name="rating1" value="5"><i></i>
-    </span>
-    <textarea id = "review-text" name="review-text" cols="40" rows="5"></textarea>
-    <button type = "submit">Add Book</button>
-</form>
-</div>
- */
-
-
-/*end the form */
-
+/*end the popup form*/
