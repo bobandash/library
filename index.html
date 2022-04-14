@@ -18,7 +18,7 @@
         <div id = "all-books-container">
             <div class = "books-container">
                 <div class = "text-category">
-                    <div>Name</div>
+                    <div>Title</div>
                     <div>Author</div>
                     <div>Pages</div>
                     <div>Read</div>
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div id = "modal-container">
-        <form id = "add-book-form" method = "post">
+        <form id = "add-book-form" method = "GET">
             <button id = "close-button">X</button>
             <h1 id = "form-header">Add a Book</h1>
             <label for = "book-name">Book Name:</label>
@@ -64,7 +64,7 @@
                 <input type="radio" name="rating1" value="5"><i></i>
             </span>
             <textarea id = "review-text" name="review-text" cols="40" rows="5"></textarea>
-            <button type = "submit">Add Book</button>
+            <input type = "submit" id = "form-submit-btn" value = "Add Book">
         </form>
     </div>
 </body>
