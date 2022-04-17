@@ -19,7 +19,7 @@ header {
     justify-content: center;
     background-color: rgba(211, 211, 211, 0.288);
     box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    height: 150px;
+    height: 10em;
 }
 
 #header-text {
@@ -54,10 +54,12 @@ header {
 }
 
 .books-container {
-    height: 270px;
-    width: 340px;
     border: 1px solid black;
     border-radius: 10px;
+    margin: 1.25em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    width: calc(90%/3);
+    height: 300px;
     display: grid;
     grid-template-columns: 35% 65%;
     grid-template-rows: 77.5% 22.5%;
@@ -137,13 +139,7 @@ header {
     flex-wrap: wrap;
 }
 
-.books-container {
-    margin: 1.25em;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-    /*need to check this out later*/
-    width: 300px;
-    height: 300px;
-}
+
 
 /*for the popup form*/
 #modal-container {
@@ -166,9 +162,10 @@ header {
     opacity: 1;
 }
 
+
 #add-book-form {
     background-color: white;
-    width: 600px;
+    width: 500px;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -176,27 +173,56 @@ header {
     padding: 30px 50px;
 }
 
-#add-book-form label {
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-}
-
 #close-button {
     border-radius: 50%;
-    width: 2em;
+    width: 2.5em;
+    height: 2.5em;
     margin-left: auto;
+    background-color: red;
+    box-sizing: border-box;
+    color: white;
+    border: none;
+}
+
+#close-button:hover {
+    background-color: rgb(255, 0, 0,0.3)
 }
 
 #form-header {
     margin-top: 0;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+    height: 3rem;
 }
 
-#add-book-form > input {
-    width: 300px;
-    height: 1.2em;
+#form-submit-btn {
+    margin-top: 1.5rem;
+    height: 2em;
+    width: 50%;
+    margin: 1.75rem auto 0 auto;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#form-submit-btn:hover {
+    background-color: white;
+}
+
+#add-book-form label {
+    margin-top: 0.7rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.1em;
+}
+
+#add-book-form > input, #book-read {
+    height: 2em;
     font-size: 1.2em;
 }
+
+input.error {
+    border-color: red;
+}
+
 /*end the popup form*/

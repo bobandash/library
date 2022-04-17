@@ -7,11 +7,15 @@ const formSubmitBtn = document.getElementById('form-submit-btn');
 
 let myLibrary = [];
 
-function Book(title, author, numPages, read) {
+function Book(title, author, numPages, bookRead) {
     this.title = title;
     this.author = author;
     this.numPages = numPages;
-    this.read = read;
+    this.bookRead = bookRead;
+}
+
+Book.prototype.toggleRead = function() {
+    if(this.bookRead == 'Yes' ? this.BookRead = 'No' : this.BookRead = 'Yes');
 }
 
 function addBookToLibrary() {
@@ -21,13 +25,19 @@ function addBookToLibrary() {
 }
 
 function createNewBook() {
-    let bookName = document.getElementById('book-name').value;
-    let authorName = document.getElementById('author-name').value;
-    let numPages = document.getElementById('num-pages').value;
-    let bookRead = document.getElementById("book-read").value;
+    const bookNameElem = document.getElementById('book-name');
+    const authorNameElem = document.getElementById('author-name');
+    const numPagesElem = document.getElementById('num-pages');
+    const bookReadElem = document.getElementById('book-read');
+
+    let bookName = bookNameElem.value;
+    let authorName = authorNameElem.value;
+    let numPages = numPagesElem.value;
+    let bookRead = bookReadElem.value;
     let newBook =  new Book(bookName, authorName, numPages, bookRead);
     myLibrary.push(newBook);
 }
+
 
 function displayBook(allBooksContainer, index) {
 
@@ -70,7 +80,7 @@ function addCategoryTextAndValues(bookContainer, index) {
                 break;
             case 3:
                 categoryName.innerText = 'Read';
-                categoryValue.innerText = myLibrary[index].read;
+                categoryValue.innerText = myLibrary[index].bookRead;
                 break;
             case 4:
                 categoryName.innerText = 'Review';
@@ -94,15 +104,34 @@ function addButtons(bookContainer, index) {
             case 0:
                 currButton.classList.add('delete-btn');
                 currIcon.classList.add('fa-trash');
-/*                  currButton.addEventListener('click', removeBook(index)); */
+                currButton.addEventListener('click', function () {
+                    myLibrary.splice(index, 1);
+                    clearDisplay();
+                    displayAllBooks();
+                }); 
                 break;
             case 1:
                 currButton.classList.add('edit-btn');
                 currIcon.classList.add('fa-pen');
+                //come back to this
+/*                 currButton.addEventListener('click', function () {
+                    modalContainer.classList.add('show');
+                })     */   
                 break;
             case 2:
                 currButton.classList.add('toggle-read-btn');
                 currIcon.classList.add('fa-book');
+                currButton.addEventListener('click', function () {
+/*                     myLibrary[index].toggleRead(); */
+                    if(myLibrary[index].bookRead == 'Yes') {
+                        myLibrary[index].bookRead = 'No';
+                    }
+                    else {
+                        myLibrary[index].bookRead = 'Yes';
+                    }
+                    clearDisplay();
+                    displayAllBooks();
+                })
                 break;
         }
     }
@@ -117,8 +146,6 @@ function displayAllBooks() {
 
 function removeBook(index) {
     myLibrary.splice(index,1);
-    clearDisplay();
-    displayAllBooks();
 }
 
 function clearDisplay() {
@@ -136,14 +163,35 @@ let form = document.getElementById("add-book-form");
 function handleForm(event) { event.preventDefault(); } 
 form.addEventListener('submit', handleForm);
 
+
 //form functionality
-formSubmitBtn.addEventListener('click', function() {
-    addBookToLibrary();
-    modalContainer.classList.remove('show');
-})
+formSubmitBtn.addEventListener('click', () => {
+    if(form.checkValidity()){
+        addBookToLibrary();
+        modalContainer.classList.remove('show');
+        form.reset();
+    }
+    else {
+        const inputs = document.querySelectorAll("input");
+        inputs.forEach(input => {
+        input.addEventListener(
+            "invalid",
+            event => {
+            input.classList.add("error");
+            },
+            false
+        );
+        });
+    }
+});
+
 
 addBookBtn.addEventListener('click', function () {
     modalContainer.classList.add('show');
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+        input.classList.remove("error");
+    })
 });
 
 closeBtn.addEventListener('click', function () {

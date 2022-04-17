@@ -16,45 +16,24 @@
     </header>
     <div id = "all-books-location">
         <div id = "all-books-container">
-<!--             <div class = "books-container">
-                <div class = "text-category">
-                    <div>Title</div>
-                    <div>Author</div>
-                    <div>Pages</div>
-                    <div>Read</div>
-                    <div>Review</div>
-                </div>
-                <div class = "text-content">
-                    <div>Percy Jackson</div>
-                    <div>Rick Riordan</div>
-                    <div>270 Pages</div>
-                    <div>Yes</div>
-                    <div>5 stars - I learned a lot from reading this book.</div>
-                </div>
-                <div class = "buttons-content">
-                    <button class = "delete-btn"><i class="fa-solid fa-trash"></i></button>
-                    <button class = "edit-btn"><i class="fa-solid fa-pen"></i></button>
-                    <button class = "toggle-read-btn"><i class="fa-solid fa-book"></i></button>
-                </div>
-            </div> -->
         </div>
     </div>
     <div id = "modal-container">
-        <form id = "add-book-form" action = "#">
+        <form novalidate="novalidate" id = "add-book-form">
             <button id = "close-button">X</button>
             <h1 id = "form-header">Add a Book</h1>
             <label for = "book-name">Book Name:</label>
-            <input type = "text" id = "book-name" name = "book-name">
+            <input type = "text" id = "book-name" name = "book-name" required>
             <label for = "author-name">Author Name:</label>
-            <input type = "text" id = "author-name" name = "author-name">
+            <input type = "text" id = "author-name" name = "author-name" required>
             <label for = "num-pages">Pages:</label>
-            <input type = "text" id = "num-pages" name = "num-pages">
+            <input type = "number" id = "num-pages" name = "num-pages" required>
             <label for = "book-read">Book Read:</label>
             <select id = "book-read">
                 <option value = "No">No</option>
                 <option value = "Yes">Yes</option>
             </select>
-            <label>Review:</label>
+<!--             <label>Review:</label>
             <span class = "star-rating">
                 <input type="radio" name="rating1" value="1"><i></i>
                 <input type="radio" name="rating1" value="2"><i></i>
@@ -62,8 +41,8 @@
                 <input type="radio" name="rating1" value="4"><i></i>
                 <input type="radio" name="rating1" value="5"><i></i>
             </span>
-            <textarea id = "review-text" name="review-text" cols="40" rows="5"></textarea>
-            <button type = "submit" id = "form-submit-btn">Add Book</button>
+            <textarea id = "review-text" name="review-text" cols="40" rows="5"></textarea>-->
+            <button type = "submit" id = "form-submit-btn">Add</button>
         </form>
     </div>
 </body>
